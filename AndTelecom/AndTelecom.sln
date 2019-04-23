@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndTelecom", "AndTelecom\AndTelecom.csproj", "{E1F338DD-B110-4B0A-8B24-7528DB3DC9E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndTelecom.Tests", "AndTelecom.Tests\AndTelecom.Tests.csproj", "{4689AF8E-8A09-4473-88EE-8339EDBA5F7C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E1F338DD-B110-4B0A-8B24-7528DB3DC9E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1F338DD-B110-4B0A-8B24-7528DB3DC9E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1F338DD-B110-4B0A-8B24-7528DB3DC9E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1F338DD-B110-4B0A-8B24-7528DB3DC9E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4689AF8E-8A09-4473-88EE-8339EDBA5F7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4689AF8E-8A09-4473-88EE-8339EDBA5F7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4689AF8E-8A09-4473-88EE-8339EDBA5F7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4689AF8E-8A09-4473-88EE-8339EDBA5F7C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {795DA231-72D6-4282-8ACA-145F927B7BAD}
+	EndGlobalSection
+EndGlobal
