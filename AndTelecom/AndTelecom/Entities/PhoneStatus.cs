@@ -5,9 +5,10 @@ using System.Threading.Tasks;
 
 namespace AndTelecom.Entities
 {
-    public class Customer
+    public enum PhoneStatus
     {
-        public int id { get; set; }
-        public List<PhoneNumber> PhoneNumbers { get; set; }
+        Activated,
+        NotActivated,
+        DeActivated
     }
 }

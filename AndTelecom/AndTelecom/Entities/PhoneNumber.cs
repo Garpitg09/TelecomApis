@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace AndTelecom.Entities
 {
-    public class Customer
+    public class PhoneNumber
     {
-        public int id { get; set; }
-        public List<PhoneNumber> PhoneNumbers { get; set; }
+        public string Number { get; set; }
+        public PhoneStatus Status { get; set; }
     }
 }

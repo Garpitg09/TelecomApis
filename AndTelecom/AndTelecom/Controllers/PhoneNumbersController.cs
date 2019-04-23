@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using AndTelecom.Repository;
 
+/*This is a sample API required by a telecom provider. */
 namespace AndTelecom.Controllers
 {
     [Route("api/[controller]")]
@@ -20,23 +18,54 @@ namespace AndTelecom.Controllers
 
         //default endpoint to fetch all the phone numbers in the database
         [HttpGet]
-        public IList<string> GetPhoneNumbers()
+        public IActionResult GetPhoneNumbers()
         {
-            return null;
+            try
+            {
+                var phoneNumbers = _phoneRepository.GetAllPhoneNumbers();
+                return Ok(phoneNumbers);
+            }
+            catch (Exception e)
+            {
+                return Forbid("Sorry, we are not able to retrieve phone numbers");
+            }
         }
 
         //endpoint to fetch the phone numbers against one customer id.
         [HttpGet("{id}")]
-        public IList<string> GetPhoneNumbersById()
+        public IActionResult GetPhoneNumbersById(int id)
         {
-            return null;
+            try
+            {
+                var phoneNumbers = _phoneRepository.GetPhoneNumbersById(id);
+                if(phoneNumbers.Count == 0)
+                    return BadRequest("Sorry, we can not find the customer in our system");
+                return Ok(phoneNumbers);
+            }
+            catch (Exception)
+            {
+                return Forbid("Sorry, we are not able to retrieve phone numbers for the customer");
+            }
         }
 
         //endpoint to activate the provided phone number, if it is in the system
         [HttpPut("{phoneNumber}")]
-        public bool? ActivatePhoneNumber()
+        public IActionResult ActivatePhoneNumber(string phoneNumber)
         {
-            return null;
+            try
+            {
+                if (phoneNumber.Length != 10)
+                    return BadRequest("Provided phone number is not correct");
+
+                if (_phoneRepository.ActivatePhoneNumber(phoneNumber))
+                    return Ok("Activation successful");
+                else
+                    return BadRequest("Sorry, provided phone number not found in the system");
+            }
+            catch (Exception e)
+            {
+                return Forbid("Sorry, we are unable to activate your mobile number now. Please try later");
+            }
         }
     }
 }

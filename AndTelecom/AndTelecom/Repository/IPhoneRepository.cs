@@ -8,7 +8,7 @@ namespace AndTelecom.Repository
     public interface IPhoneRepository
     {
         List<string> GetAllPhoneNumbers();
-        List<string> GetPhoneNumbersById(string customerId);
-        bool? ActivatePhoneNumber(string phoneNumber);
+        List<string> GetPhoneNumbersById(int customerId);
+        bool ActivatePhoneNumber(string phoneNumber);
     }
 }
