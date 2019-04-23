@@ -48,16 +48,16 @@ namespace AndTelecom.Controllers
             }
         }
 
-        //endpoint to activate the provided phone number, if it is in the system
-        [HttpPut("{phoneNumber}")]
-        public IActionResult ActivatePhoneNumber(string phoneNumber)
+        //endpoint to activate the provided phone number, if it is in the system. id used here is the phone number.
+        [HttpPut("{id}")]
+        public IActionResult ActivatePhoneNumber(string id)
         {
             try
             {
-                if (phoneNumber.Length != 10)
+                if (id.Length != 10)
                     return BadRequest("Provided phone number is not correct");
 
-                if (_phoneRepository.ActivatePhoneNumber(phoneNumber))
+                if (_phoneRepository.ActivatePhoneNumber(id))
                     return Ok("Activation successful");
                 else
                     return BadRequest("Sorry, provided phone number not found in the system");

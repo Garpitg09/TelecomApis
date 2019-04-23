@@ -1,0 +1,53 @@
+swagger: '2.0'
+info:
+  description: This is a sample Api with three endpoints for a telecom provider
+  version: 1.0.0
+  title: Customer mobile number API
+schemes:
+  - https
+paths:
+  /api/PhoneNumbers:
+    get:
+      operationId: getphoneNmbers
+      tags:
+        - get all phone numbers
+      responses:
+        '200':
+          description: the list of all phone numbers
+        '403':
+          description: 'not able to retrieve data '
+  '/api/PhoneNumbers/{id}':
+    get:
+      operationId: getphoneNmbersbyid
+      tags:
+        - get all phone numbers for a customer
+      parameters:
+        - in: path
+          name: id
+          type: string
+          description: customer id
+          required: true
+      responses:
+        '200':
+          description: the list of all phone numbers for the customer
+        '400':
+          description: bad request
+        '403':
+          description: not able to retrieve data
+    put:
+      operationId: activate phone number
+      tags:
+        - activate the provided phone number
+      parameters:
+        - in: path
+          name: id
+          type: string
+          description: phone number
+          required: true
+      responses:
+        '200':
+          description: Activate successful
+        '400':
+          description: bad request
+        '403':
+          description: not able to update the status
